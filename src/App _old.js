@@ -11,29 +11,6 @@ import { SidePanel } from 'polotno/side-panel';
 import { Workspace } from 'polotno/canvas/workspace';
 import { setTranslations } from 'polotno/config';
 import { getTranslations } from 'polotno/config';
-import { observer } from 'mobx-react-lite';
-import { GiPostStamp } from 'react-icons/gi';
-import { FaNewspaper, FaShopify } from 'react-icons/fa';
-import { CgFormatText } from 'react-icons/cg';
-import { MdFormatShapes } from 'react-icons/md';
-import { FcTemplate } from 'react-icons/fc';
-import {RiMoneyDollarBoxFill} from 'react-icons/ri';
-import { VscNewFile } from 'react-icons/vsc';
-import { SiWebpack } from 'react-icons/si';
-import { BsGrid1X2Fill, BsListOl } from 'react-icons/bs';
-import { HiSquaresPlus } from 'react-icons/hi2';
-import { IoBarChartSharp } from 'react-icons/io5';
-
-import {
-  TextSection,
-  PhotosSection,
-  ElementsSection,
-  UploadSection,
-  BackgroundSection,
-  SizeSection,
-} from 'polotno/side-panel';
-//
-import { SectionTab } from 'polotno/side-panel';
 
 setTranslations({
   sidePanel: {
@@ -49,6 +26,15 @@ setTranslations({
 });
 
 const store = createStore();
+/* Exemplo de criação DEMO
+const { store } = createDemoApp({
+  container: document.getElementById('root'),
+  key: 'PzZO8dQDYqDLAtXmjS2j', // you can create it here: https://polotno.com/cabinet/
+  // you can hide back-link on a paid license
+  // but it will be good if you can keep it for Polotno project support
+  showCredit: true,
+});
+*/
 
 const page = store.addPage();
 
@@ -69,34 +55,13 @@ page.addElement({
   fill: 'black',
   text: 'Apenas testando algumas palavras',
 });
-//console.log(getTranslations());
-
-// define the new custom section
-const CustomSection = {
-  name: 'selos',
-  Tab: (props) => (
-    <SectionTab name="Selos" {...props}>
-      <i><GiPostStamp /></i>
-    </SectionTab>
-  ),
-  // we need observer to update component automatically on any store changes
-  Panel: observer(({ store }) => {
-    return (
-      <div>
-        <p draggable>Área pra carregar os selos</p>
-        <p draggable>Selos: {store.activePage?.children.length}</p>
-      </div>
-    );
-  }),
-};
-
-const sections = [TextSection, PhotosSection, ElementsSection, CustomSection, UploadSection, BackgroundSection, SizeSection];
+console.log(getTranslations());
 
 const App = () => {
   return (
     <PolotnoContainer style={{ width: '100vw', height: '100vh' }}>
       <SidePanelWrap>
-        <SidePanel store={store} sections={sections} defaultSection="custom" />
+        <SidePanel store={store} />
       </SidePanelWrap>
       <WorkspaceWrap>
         <Toolbar store={store} downloadButtonEnabled />

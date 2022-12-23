@@ -14,6 +14,20 @@ import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
+/** React Icons
+ * import { FaNewspaper, FaShopify } from 'react-icons/fa';
+import { CgFormatText } from 'react-icons/cg';
+import { MdFormatShapes } from 'react-icons/md';
+import { FcTemplate } from 'react-icons/fc';
+import {RiMoneyDollarBoxFill} from 'react-icons/ri';
+import { VscNewFile } from 'react-icons/vsc';
+import { SiWebpack } from 'react-icons/si';
+import { BsGrid1X2Fill, BsListOl } from 'react-icons/bs';
+import { HiSquaresPlus } from 'react-icons/hi2';
+import { IoBarChartSharp } from 'react-icons/io5';
+ */
+
+
 // import all default sections
 // we will not use all of them in the demo
 // just to show what we have

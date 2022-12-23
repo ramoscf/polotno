@@ -13,16 +13,7 @@ import { setTranslations } from 'polotno/config';
 import { getTranslations } from 'polotno/config';
 import { observer } from 'mobx-react-lite';
 import { GiPostStamp } from 'react-icons/gi';
-import { FaNewspaper, FaShopify } from 'react-icons/fa';
-import { CgFormatText } from 'react-icons/cg';
-import { MdFormatShapes } from 'react-icons/md';
-import { FcTemplate } from 'react-icons/fc';
-import {RiMoneyDollarBoxFill} from 'react-icons/ri';
-import { VscNewFile } from 'react-icons/vsc';
-import { SiWebpack } from 'react-icons/si';
-import { BsGrid1X2Fill, BsListOl } from 'react-icons/bs';
-import { HiSquaresPlus } from 'react-icons/hi2';
-import { IoBarChartSharp } from 'react-icons/io5';
+
 
 import {
   TextSection,
@@ -45,7 +36,11 @@ setTranslations({
     background: 'Fundo',
     layers: 'Camadas',
     resize: 'Redimensionar',
+    searchPlaceholder: 'Procurar',
   },
+  toolbar: {
+    position: "Posição",
+  }
 });
 
 const store = createStore();
@@ -69,7 +64,7 @@ page.addElement({
   fill: 'black',
   text: 'Apenas testando algumas palavras',
 });
-//console.log(getTranslations());
+console.log(getTranslations());
 
 // define the new custom section
 const CustomSection = {

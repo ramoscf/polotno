@@ -15,6 +15,10 @@ import { getTranslations } from 'polotno/config';
 import { observer } from 'mobx-react-lite';
 import { GiPostStamp } from 'react-icons/gi';
 
+import { DEFAULT_SECTIONS } from 'polotno/side-panel';
+import { TemplatesSection } from './templates-panel';
+
+
 import axios from 'axios';
 
 import {
@@ -114,7 +118,8 @@ const CustomSection = {
   }),
 };
 
-const sections = [TextSection, PhotosSection, ElementsSection, CustomSection, UploadSection, BackgroundSection, SizeSection];
+//const sections = [TextSection, PhotosSection, ElementsSection, CustomSection, UploadSection, BackgroundSection, SizeSection];
+const sections = [TemplatesSection, TextSection, PhotosSection, ElementsSection, CustomSection, UploadSection, BackgroundSection, SizeSection, ...DEFAULT_SECTIONS];
 
 const App = () => {
   return (

@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from 'react';
 import './App.css';
 //import { createDemoApp } from 'polotno/polotno-app';
 import '@blueprintjs/icons/lib/css/blueprint-icons.css';
@@ -14,6 +15,7 @@ import { getTranslations } from 'polotno/config';
 import { observer } from 'mobx-react-lite';
 import { GiPostStamp } from 'react-icons/gi';
 
+import axios from 'axios';
 
 import {
   TextSection,
@@ -76,10 +78,36 @@ const CustomSection = {
   ),
   // we need observer to update component automatically on any store changes
   Panel: observer(({ store }) => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        //axios.get('https://apicartazfacil.com/public/api/cf_imagem?token=lezsyc2jx3rnov1ptdbik89a4qh5mf67')
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then(res => {
+            //const data = res.data.data;
+            const data = res.data;
+            setData(data);
+        }).catch(err=>{
+          console.log(err);
+      })
+  },[])
+
     return (
       <div>
         <p draggable>Área pra carregar os selos</p>
         <p draggable>Selos: {store.activePage?.children.length}</p>
+        <ul>
+          {
+            data && data.map((item)=>{
+              return(
+                <>
+                  <li><span draggable>{item.title}</span></li>
+                </>
+                )
+            })
+            }
+          </ul>
       </div>
     );
   }),

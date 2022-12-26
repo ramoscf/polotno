@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.scroll-y{
+  overflow-y: scroll;
+  height: 100vh;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

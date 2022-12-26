@@ -94,8 +94,9 @@ const CustomSection = {
   },[])
 
     return (
-      <div>
+      <div className='scroll-y'>
         <p draggable>Área pra carregar os selos</p>
+        <p draggable>Dados vindos de: https://jsonplaceholder.typicode.com/posts </p>
         <p draggable>Selos: {store.activePage?.children.length}</p>
         <ul>
           {
